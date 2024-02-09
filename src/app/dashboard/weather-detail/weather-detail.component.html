@@ -1,0 +1,34 @@
+
+<mat-card class="Weather1">
+  <div >
+    <div class="back-button">
+        <mat-icon (click)="onBack()">arrow_back</mat-icon>
+    </div>
+    <div class="settings-icon">
+        <mat-icon [routerLink]="['/settings']">settings</mat-icon>
+      </div>
+    </div>
+
+    <div class="top-content">
+      <h1>{{ cityName }}</h1>
+      <p class="temperature">{{ cityWeatherData?.current?.apparent_temperature }}°C</p>
+    </div>
+    <img *ngIf="cityWeatherData?.current" class="weather-icon2" [src]="getWeatherIcon(cityWeatherData.current.weather_code, cityWeatherData.current.time)" alt="Weather image">
+    <p>{{ getWeatherLabel(cityWeatherData.current.weather_code) }}</p>
+
+
+    <div class="bottom-content">
+      <div class="days-container"></div>
+      <div *ngFor="let dailyWeatherCode of cityWeatherData?.daily?.weather_code; let i = index" class="day-column">
+        <h2>Day {{ i + 1 }}</h2>
+        <div class="image-row">
+          <img *ngIf="cityWeatherData?.daily" class="weather-icon" 
+          [src]="getWeatherIcon(dailyWeatherCode, cityWeatherData?.daily?.time[i])" 
+          alt="Weather image">
+          <p class="icon-label">{{ getWeatherLabel(dailyWeatherCode) }}</p>
+        </div>
+        <p *ngIf="cityWeatherData?.daily?.apparent_temperature_max"> {{ cityWeatherData?.daily?.apparent_temperature_max[i] }}°C</p>
+      </div>
+    </div>
+
+  </mat-card>

@@ -1,0 +1,20 @@
+<app-weather-card [cityData]="selectedCityObject"></app-weather-card>
+<mat-card-content class="AddLocation">
+    <h1> Add Location </h1>
+    <mat-form-field class="Zip">
+<mat-label>ZipCode</mat-label>
+    <mat-select #select="ngModel" [(ngModel)]="selectedCity" name="city" required (selectionChange)="onCityChange($event.value)">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let city of cities" [value]="city.ZipCode">
+            {{ city.City }} - {{ city.ZipCode }}
+          </mat-option> 
+    </mat-select>
+    <mat-error *ngIf="select.invalid && (select.dirty || select.touched)">Please choose a City</mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+        <button mat-raised-button aria-label="Save" class="Save" (click)="saveLocation()" [routerLink]="['/weather']"> Save </button>
+        <button mat-raised-button aria-label="Cancel" class="Cancel" (click)="onCancel()"> Cancel </button>
+    </div>
+    
+</mat-card-content>

@@ -1,0 +1,44 @@
+[
+    {
+      "ZipCode": 10032,
+      "City": "New York",
+      "State": "NY",
+      "Latitude": 40.7143,
+      "Longitude": -74.006
+    },
+    {
+        "ZipCode": 60601,
+        "City": "Chicago",
+        "State": "IL",
+        "Latitude": 41.85,
+        "Longitude": -87.65
+    },
+    {
+        "ZipCode": 94117,
+        "City": "San Francisco",
+        "State": "CA",
+        "Latitude": 37.7749,
+        "Longitude": -122.4194
+    },
+    {
+        "ZipCode": 60531,
+        "City": "Leland",
+        "State": "IL",
+        "Latitude": 41.6125,
+        "Longitude": -88.7995
+    },
+    {
+        "ZipCode": 67008,
+        "City": "Atlanta",
+        "State": "KS",
+        "Latitude": 37.4364,
+        "Longitude": -96.7648
+    },
+    {
+        "ZipCode": 70647,
+        "City": "Iowa",
+        "State": "LA",
+        "Latitude": 30.2369,
+        "Longitude": -93.0138
+    }
+  ]

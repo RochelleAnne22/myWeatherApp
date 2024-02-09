@@ -1,0 +1,24 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%; /* Full width by default */
+  padding: 0 20px; /* Add horizontal padding */
+}
+
+@media (min-width: 769px) {
+  mat-toolbar {
+    max-width: 100%; /* 80% width on larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  mat-toolbar {
+    max-width: 100%; /* 90% width on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  mat-toolbar {
+    max-width: 100%; /* Full width on small screens */
+  }
+}

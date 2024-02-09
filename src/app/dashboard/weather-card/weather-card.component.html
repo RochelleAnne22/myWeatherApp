@@ -1,0 +1,22 @@
+<div class="card-container" >
+<mat-grid-list [cols]="cols" [rowHeight]="rowHeight" gutterSize="5px" class="master-grid">
+    <div *ngFor="let city of selectedCityData">
+        <mat-grid-tile>
+            <mat-card [routerLink]="['/detail', city.City]">
+                <mat-card-header>
+                    <mat-card-title>
+                        {{ city.City }}
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content *ngIf="weatherData[city.City] | async as cityWeatherData">
+                    <p>{{ cityWeatherData.current.apparent_temperature }}°C</p>
+                    <p>{{ convertDate(cityWeatherData.current.time)}}</p>
+                    <img class="weather-icon" [src]="getWeatherIcon(cityWeatherData.current.weather_code, cityWeatherData.current.time)" alt="Weather image">
+                    <p>{{ getWeatherLabel(cityWeatherData.current.weather_code) }}</p>
+                    
+</mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>
+</div>

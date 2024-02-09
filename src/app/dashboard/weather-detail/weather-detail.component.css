@@ -1,0 +1,131 @@
+.Weather1 {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw; /* 80% of the viewport width */
+  max-width: 600px;
+  height: 80vh;
+  max-height: 90vh; /* 80% of the viewport height */
+  background: lightcoral;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+.top-content {
+  align-self: flex-start; /* Align at the middle vertically */
+  margin-top: 200px; /* Align to the left horizontally */
+  margin-left: 40px;
+}
+
+.bottom-content {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: auto; /* Align to the bottom horizontally */
+  width: 100%;
+  height: 50%; 
+  padding: 20px 0;
+}
+
+.back-button, .settings-icon {
+  position: absolute;
+  top: 20px;
+}
+
+.back-button {
+  left: 20px;
+}
+
+.settings-icon {
+  right: 20px;
+}
+
+h1, .centered, .w {
+  position: relative; /* Change to relative so they move with the flex container */
+  text-align: center;
+  width: 100%; /* Take up the full width of the container */
+}
+
+.days-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-grow: 0; /* Take up all available space */
+  align-self: flex-end;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.icon-label{
+  margin: 5px;
+}
+
+.image-row .weather-icon {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.weather-icon {
+  margin-top: 13px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.weather-icon2 {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  margin-top: 50px;
+  max-width: 200px; /* Responsive image size */
+  max-height: 300px;
+}
+
+@media (max-width: 600px) {
+  .Weather1 {
+    width: 100vw; /* Full width of the viewport */
+    padding: 10px;
+  }
+
+  h1, .centered, .w {
+    font-size: 6vw; /* Larger font size on small screens */
+  }
+
+  .back-button, .settings-icon {
+    top: 10px; /* Closer to the top on small screens */
+  }
+
+  .back-button {
+    left: 10px; /* Closer to the left on small screens */
+  }
+
+  .settings-icon {
+    right: 10px; /* Closer to the right on small screens */
+  }
+
+  .weather-icon {
+    max-width: 15vw; /* Larger image size on small screens */
+    max-height: 15vw;
+  }
+
+  .weather-icon2 {
+    max-width: 30vw; /* Larger image size on small screens */
+    max-height: 45vw;
+  }
+}

@@ -1,0 +1,17 @@
+<mat-card-content class="Weather1">
+    <div class="back-button">
+        <mat-icon [routerLink]="['/detail']" (click)="onBack">arrow_back</mat-icon>
+    </div>
+    <div class="delete" *ngFor="let city of selectedCities$ | async; let i = index; trackBy: trackByFn">
+        <mat-icon [routerLink]="['/weather']" (click)="deleteCity(i)">remove_circle</mat-icon>
+         <h2> Remove City </h2>
+    </div>
+
+    <div class="change-temperature">
+        <h2> Change Temperature </h2>
+    </div>
+
+    <img class="tempIcon" src="/assets/Temperature/celsius_3750633.png" alt="celsius" (click)="convertToCelsius()">
+    <img class="tempIcon" src="/assets/Temperature/fahrenheit_3750650.png" alt="fahrenheit" (click)="convertToFahrenheit()">
+    </mat-card-content>
+    
